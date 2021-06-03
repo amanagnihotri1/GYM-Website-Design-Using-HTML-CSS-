@@ -43,6 +43,10 @@
     <script src="https://kit.fontawesome.com/aae7ef59b3.js" crossorigin="anonymous"></script>
     <title>GYM</title>
     <style>
+       html
+        { position:relative;
+            height:2500px;
+        }
         body {
             overflow-x: hidden;
         }
