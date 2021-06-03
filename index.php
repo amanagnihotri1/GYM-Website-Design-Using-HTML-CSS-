@@ -41,10 +41,9 @@
 <link rel="stylesheet" href="GYM.css">
 <title>GYM</title>
 <style>
-html{
-height: 2500px;
 
-
+body{
+  overflow-x: hidden;
 }
 *{
 padding: 0;
@@ -59,69 +58,85 @@ align-items: center;
 position: relative;
 }
 .navlinks
-{
+{ justify-content: center;
+  align-items: center;
 text-decoration: none;
-
+display: block;
 position: absolute;
+margin-top: 30px;
+left: 780px;
+
 }
 .logo{
-width: 80px;
+position: absolute;
+  width: 80px;
 height: 80px;
-transform: translateX(-200%);
-top: 3%;
+float: left;
+top:10%;
+left: 100px;
+z-index: 2;
 }
+
 .logo>img
 {
-width: 100%;
-height: 100%;
+width: 70%;
+height: 70%;
 object-fit: fill;
+z-index: 2;
 }
 
 
-
-.navlinks li,a
+.navlinks a
 {text-decoration: none;
 margin-left: 10px;
 font-family: 'Lexend', sans-serif;
-font-size: 15px;
-font-weight: 700;
+font-size: 13px;
+font-weight: 500;
 display: inline;
-color: rgb(109, 116, 110);
+color: rgb(255, 255, 255);
 transition: all ease-in-out 0.3s;
 letter-spacing: 3px;
 text-align: center;
+margin-left: 10px;
+margin-right: 10px;
 }
 
 .navbar{
 position: fixed;
-display: flex;
-justify-content: space-around;
+float: none;
+background-color: #161618;
+justify-content: center;
 width: 100%;
-height: 60px;
-background-color: white;
+min-height: 12vh;
+color: white;
 align-items: center;
-padding-top:20px;
 overflow: hidden;
 z-index: 100;
 }
 .enr {
-  background: #c483d4;
-  background-image: -webkit-linear-gradient(top, #c483d4, #9e2bb8);
-  background-image: -moz-linear-gradient(top, #c483d4, #9e2bb8);
-  background-image: -ms-linear-gradient(top, #c483d4, #9e2bb8);
-  background-image: -o-linear-gradient(top, #c483d4, #9e2bb8);
-  background-image: linear-gradient(to bottom, #c483d4, #9e2bb8);
+ position: fixed;
+ float: right;
+  background: #e7f70c;
+  background-image: -webkit-linear-gradient(top, #93a337, #9c9127);
+  background-image: -moz-linear-gradient(top, #939453, #6c942b);
+  background-image: -ms-linear-gradient(top, #7d8331, #58b82b);
+  background-image: -o-linear-gradient(top, #bcc453, #44861e);
+  background-image: linear-gradient(to bottom, #939e32, #96bb30);
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
   border-radius: 28px;
   font-family: Arial;
   color: #ffffff;
   font-size: 12px;
+  font-weight: 600;
   padding: 12px 20px 6px 20px;
   text-decoration: none;
 width: 80px;
 height:18px;
-transform: translate(450%,0);
+text-align: center;
+left: 180vh;
+top: 20px;
+z-index: 101;
 }
 
 .enr:hover {
@@ -132,26 +147,22 @@ transform: translate(450%,0);
   background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
   text-decoration: none;
+cursor: pointer;
 }
 
-
-
-
-
-
-li a:hover
+.navlinks a:hover
 { cursor: pointer;
-background-color: blueviolet;
+
 border-radius: 8%;
 color: white;
-margin: 0 20px 20px ;
 width: 120px;
-padding: 5px;
+
 font-size: 15px;
 }
-
-
-
+.navbar.icon
+{ display: none;
+   
+}
 .hero{
 position: relative;
 width: 80%;
@@ -243,53 +254,66 @@ border-radius: 25px;
 box-shadow: 0 0 0 ;
 }
 #about
-{ width: 100%;
+{  margin-top:30px; 
+  width: 100%;
 height: 650px;
 background-image: url(https://www.teahub.io/photos/full/66-662853_gym-hd.jpg);
-
+opacity: 1;
 }
-.slidinfo
+#about::before
 {
-opacity: 0;
-width: 0;
-height: 650px;
-background-color: rgba(0, 0, 0, 0.589);
+  content: '';
+  position: absolute;
+  background-color: black;
+  width: 220vh;
+height: 89vh;
+top: 716px;
+opacity: 0.7;
 }
-#aboutxt{
-font-size: 100px;
-left: -50%;
-color: white;
-top: 900px;
-font-family: 'Oswald', sans-serif;
-letter-spacing: 4px;
-position: absolute;
-transform: rotate(90deg);
-}
+
 .abin{
 position: absolute;
-left:-150%;
-top: 770px;
+left:350px;
+top: 950px;
 font-size: 30px;
+display: block;
 color: white;
 font-family: 'Oswald', sans-serif;
-font-weight: 200;
+font-weight: 300;
 text-align: justify;
-transition: all ease-in-out 0.5s;
-width: 470px;
+transition: all ease-in-out 0.2s;
+width: 810px;
+visibility: hidden;
 }
-#about:hover .slidinfo
-{ opacity: 1;
-width: 100%;
-height: 650px;
+.animat
+{ visibility: visible !important;
+  animation-name: aos;
+  animation-duration: 1s;
+animation-timing-function: ease-in-out;
 }
-#about:hover #aboutxt
-{left: 1%;
-transition: all ease-in-out 0.5s;
+@keyframes aos {
+
+    0% {
+        transform: translateX(-150%);
+    }
+    50%{
+        transform: translateX(8%);
+    }
+    65%{
+        transform: translateX(-4%);
+    }
+    80%{
+        transform: translateX(4%);
+    }
+    95%{
+        transform: translateX(-2%);
+    }               
+    100% {
+        transform: translateX(0%);
+    }   
+
 }
-#about:hover .abin
-{
-left: 40%;
-}
+
 #pricing
 {
 background-image: url(https://www.thezonegym.com/wp-content/uploads/2018/02/h3-slider-img-1.jpg);
@@ -404,24 +428,20 @@ letter-spacing: 4px;
 
 }
 
-#bs
- {width: 1000px;
-   height: 40px;
-  background: #c1de1f;
-  background-image: -webkit-linear-gradient(top, #c1de1f, #719c49);
-  background-image: -moz-linear-gradient(top, #c1de1f, #719c49);
-  background-image: -ms-linear-gradient(top, #c1de1f, #719c49);
-  background-image: -o-linear-gradient(top, #c1de1f, #719c49);
-  background-image: linear-gradient(to bottom, #c1de1f, #719c49);
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
-  border-radius: 28px;
+ #bs
+ {width: 30px;
+  height: 40px;
+  background: #6e7c1c;
+  border-radius: 25px ;
+  
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+  padding:8px 30px 8px 30px;
   font-family: Arial;
-  color: #381313;
-  font-size: 10px;
-  padding: 6px 10px 6px 10px;
-  text-decoration: none;
- }
+  text-align: center;
+  text-decoration: none; 
+}
 #bs:hover {
   background: #fcd63c;
   background-image: -webkit-linear-gradient(top, #fcd63c, #b8375e);
@@ -518,7 +538,7 @@ letter-spacing: 3px;
 footer {
 text-align: center;
 padding: 3px;
-background-color: rgb(0, 0, 0);
+background-color: rgb(34, 5, 5);
 color: white;
 display: block;
 }
@@ -529,35 +549,77 @@ html{
 scroll-behavior: smooth;
 }
 footer>a{
-transform: translate(-200%,200%);
 position: absolute;
 font-family: 'Archivo', sans-serif;
-font-size: 14px;
-font-weight: 700;
+font-size: 13px;
+font-weight: 300;
+text-decoration: none;
+bottom: -192px;
+left: 120px;
+color: rgb(255, 255, 255);
+cursor: pointer;
 }
-i:hover 
+.fab fa-instagram:hover 
 { cursor: pointer;
    color: yellow;
 
 }
-        </style>
-        </head>
+.linkna
+{ font-size: 50px;
+  position: absolute;
+  color: #f8f8f8;
+  z-index: 105;
+ top: 10px; 
+  right: 40px;
+display: none;
+}
+@media only screen and (max-width: 412px)
+{
+  .navbar{
+   position: relative;
+background-color: rgb(34, 26, 26);  
+height: 200px;
+width: 412px;
+margin: 0;
+padding: 0;
+}
+.linkna
+{ font-size: 50px;
+  position: absolute;
+  color: #f8f8f8;
+  z-index: 105;
+ top: 10px; 
+  right: 40px;
+display: none;
+}
+.navlinks 
+{display: grid;
+  grid-template-columns: auto;
+background-color: red;
+position: absolute;
+top:80px;
+margin: 0;
+width: 100%;
+left: -100%;
+opacity: 0;
+}}
 
-<body>
+</body>
 <div class="navbar" target=".navlinks">
 <div class="logo">
-    <img src="https://static.vecteezy.com/system/resources/thumbnails/000/595/377/small/04012019-07.jpg">
+    <img src="https://www.pngrepo.com/download/200170/dumbbell-gym.png">
 </div>
 
-    <ul class="navlinks">
-<li><a  href="#home">HOME</a></li>
-<li><a   href="#about">ABOUT</a></li>
-<li><a   href="#pricing">PRICING</a></li>
-<li><a href="#contact">CONTACT</a></li>
-</ul>
-<a href="" class="enr" onclick="prompt('Enter Your Gmail ID'); prompt('Enter Your Phone Number');alert('Thank You For The Details,We Will Contact You Shortly');">ENROLL</a>
-<a type="button"><i class="fas fa-bars" style="font-size: 22px; display: none;"></i></a>
-</div>
+    <div class="navlinks" id="navi">
+<a  href="#home">HOME</a>
+<a   href="#about">ABOUT</a>
+<a   href="#pricing">PRICING</a>
+<a href="#contact">CONTACT</a>
+</div></div>
+    <i class="fas fa-angle-down linkna"></i>
+<a  class="enr" onclick="prompt('Enter Your Gmail ID'); prompt('Enter Your Phone Number');alert('Thank You For The Details,We Will Contact You Shortly');">ENROLL</a>
+
+
 <section class="HOME" id="home">
 <div class="hero">
 <div class="landimg">
@@ -569,21 +631,13 @@ i:hover
 <button class="join">Join</button>
 <button class="plans">Plans</button>
 </div>
-
 </section>
-
-
-
-
-
 <section class="ABOUT" id="about" >    
-<div class="slidinfo">
-<h1 id="aboutxt">ABOUT US</h1>
+
 <p class="abin">We want to help you live a fit and healthy lifestyle! We do this by helping you find the most suitable equipment for
 your home gym, studio or commercial gym, keeping your budget, lifestyle and fitness goals in mind. We stock a wide range
 of gym equipment, with strength equipment, cardio, cross training and so much more. Our awesome team is always keen to
 help, so please call us to discuss your needs.</p>
-</div>
 </section>
 <section class="PRICING" id="pricing">
     <div>
@@ -610,9 +664,8 @@ help, so please call us to discuss your needs.</p>
             <li class="e1">Pool Access(Limited)</li>
 
             <div class="b1">$450</div>
-            <a href="" id="bs">BUY</a>
-        </ul>
-</div>
+            <a href="/" id="bs">BUY</a>
+        </ul></div>
 </section>
 <section class="CONTACT" id="contact">
 <h1 id="cont">CONTACT US</h1>
@@ -629,11 +682,27 @@ help, so please call us to discuss your needs.</p>
 </div>
 </section>
 <footer class="last">
-   <i class="fab fa-instagram" style="font-size: 25px;transform: translate(3000%,100%);"></i>
-    <i class="fab fa-twitter" style="font-size: 25px;transform: translate(3000%,100%);"></i>
-    <i class="fab fa-facebook-f"style="font-size: 25px;transform: translate(5400%,100%);"></i>
-<i class="far fa-copyright" style="font-size: 15px;transform: translate(-2400%,150%);"> </i>
-<a href="/">All Rights Reserved</a>
-</footer>
+   <i class="fab fa-instagram" style="font-size: 25px;transform: translate(2900%,100%); color: rgb(141, 110, 110);"></i>
+    <i class="fab fa-twitter" style="font-size: 25px;transform: translate(3000%,100%);color: rgb(133, 112, 112);"></i>
+    <i class="fab fa-facebook-f"style="font-size: 25px;transform: translate(5400%,100%);color: rgb(133, 112, 112); "></i>
+    <i class="far fa-copyright" style="font-size: 15px;transform: translate(-1450%,150%); color: rgb(133, 112, 112);"> </i>
+<a href="/" style="left: 250px; ">Aman Agnihotri</a>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script >
+    $(window).scroll(function () {
+            $('.abin').each(function () {
+                var imagePos = $(this).offset().top;
+                var imageHeight = $(this).height();
+                var topOfWindow = $(window).scrollTop();
+
+                if (imagePos < topOfWindow + imageHeight && imagePos + imageHeight > topOfWindow) {
+                    $(this).addClass("animat");
+                } else {
+                    $(this).removeClass("animat");
+                }
+            });
+        });
+</script>
+</footer>    
 </body>
-</html>
+    </html>
