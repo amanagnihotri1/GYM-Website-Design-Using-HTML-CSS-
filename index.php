@@ -286,7 +286,7 @@
             background-color: black;
             width: 220vh;
             height: 89vh;
-            top: 716px;
+            top: 700px;
             opacity: 0.7;
         }
 
