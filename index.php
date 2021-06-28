@@ -724,7 +724,7 @@
             <img src="https://www.jaysgymusa.com/indeximages/jaysMAP.jpg">
         </div>
         <div id="faram">
-            <form method="POST" action="index.php">
+            <form method="POST" action="https://send.pageclip.co/Rp5FwbYFKDEwnI0OYArwXvA33i8Qiby2">
                 <label for="name">Name</label> <input type="text" name="fname" id="name" placeholder="Enter Your Name" required>
                 <label for="Email">Email ID</label><input type="text" name="noemail" id="Email" placeholder="abc@gmail.com" required><br>
                 <textarea name="views" id="write" cols="50" rows="10" placeholder="Write Your Feedback Here"></textarea>
@@ -739,6 +739,7 @@
         <i class="far fa-copyright" style="font-size: 15px;transform: translate(-1450%,150%); color: rgb(133, 112, 112);"> </i>
         <a href="/" style="left: 250px; ">Aman Agnihotri</a>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+       
         <script>
             $(window).scroll(function() {
                 $('.abin').each(function() {
