@@ -739,7 +739,7 @@
         <i class="far fa-copyright" style="font-size: 15px;transform: translate(-1450%,150%); color: rgb(133, 112, 112);"> </i>
         <a href="/" style="left: 250px; ">Aman Agnihotri</a>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-       
+        
         <script>
             $(window).scroll(function() {
                 $('.abin').each(function() {
