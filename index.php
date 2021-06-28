@@ -725,8 +725,8 @@
         </div>
         <div id="faram">
             <form method="POST" action="https://send.pageclip.co/Rp5FwbYFKDEwnI0OYArwXvA33i8Qiby2">
-                <label for="name">Name</label> <input type="text" name="fname" id="name" placeholder="Enter Your Name" required>
-                <label for="Email">Email ID</label><input type="text" name="noemail" id="Email" placeholder="abc@gmail.com" required><br>
+                <label for="name">Name</label> <input type="text" name="name" id="name" placeholder="Enter Your Name" required>
+                <label for="Email">Email ID</label><input type="text" name="email" id="Email" placeholder="abc@gmail.com" required><br>
                 <textarea name="views" id="write" cols="50" rows="10" placeholder="Write Your Feedback Here"></textarea>
                 <input type="submit" value="Submit" onclick="alert('Feedback Submitted Successfully');">
             </form>
